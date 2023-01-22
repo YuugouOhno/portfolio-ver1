@@ -95,13 +95,32 @@ const box4 = new THREE.Mesh(boxGeometry, boxMaterial);
 box4.position.set(20, -19.5, -18);
 box4.rotation.set(1, 1, 0);
 
-for (let i = 0; i < 100; i++) {
+for (let i = 0; i < 200; i++) {
   const mesh = new THREE.Mesh(boxGeometry, boxMaterial);
 
   //位置をランダムに決める
-  mesh.position.x = 80 * (2.0 * Math.random() - 1.0);
-  mesh.position.y = 80 * (2.0 * Math.random() - 1.0);
-  mesh.position.z = 80 * (2.0 * Math.random() - 1.0);
+  
+  let x_position = 80 * (2.0 * Math.random() - 1.0);
+  let y_position = 80 * (2.0 * Math.random() - 1.0);
+  let z_position = 80 * (2.0 * Math.random() - 1.0);
+  
+  if (x_position <= 15 && x_position >= 0){
+    x_position += 15;
+  } else if (x_position >= -15 && x_position < 0){
+    x_position -= 15;
+  } else if (y_position <= 15 && y_position >= 0){
+    y_position += 15;
+  } else if (y_position >= -15 && y_position < 0){
+    y_position -= 15;
+  } else if (z_position <= 15 && z_position >= 0){
+    z_position += 15;
+  } else if (z_position >= -15 && z_position < 0){
+    z_position -= 15;
+  };
+
+  mesh.position.x = x_position
+  mesh.position.y = y_position
+  mesh.position.z = z_position
 
   //回転度合をランダムに決める
   mesh.rotation.x = Math.random() * Math.PI;
