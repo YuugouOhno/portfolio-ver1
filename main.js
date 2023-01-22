@@ -13,9 +13,9 @@ const height = window.innerHeight; //ブラウザの縦の長さ
 
 
 // 背景用のテクスチャ
-const textureLoader = new THREE.TextureLoader();
-const baTexture = textureLoader.load("bg/bg3.jpeg");
-scene.background = baTexture;
+// const textureLoader = new THREE.TextureLoader();
+// const baTexture = textureLoader.load("bg/bg3.jpeg");
+// scene.background = baTexture;
 
 //サイズ
 const sizes = {
