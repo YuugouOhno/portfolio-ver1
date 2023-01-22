@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <link rel="icon" type="image/svg+xml" href="/vite.svg" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>yuugou ohno</title>
+</head>
+
+<body>
+  <canvas id="webgl"></canvas>
+  <header>
+    <nav>
+      <ul>
+        <li><a href="#home">Home</a></li>
+        <li><a href="#skill">skill</a></li>
+        <li><a href="#project">project</a></li>
+        <li><a href="#conect">conect</a></li>
+      </ul>
+
+    </nav>
+  </header>
+  <main>
+    <section id="home" class="item_center">
+      <div class="anim-box">
+        <div class="myicon">
+          <img src="./skill/icon.png" />
+        </div>
+        <div>
+          <h1>Yuugou Ohno</h1>
+          <h3>web engineer</h3>
+        </div>
+      </div>
+    </section>
+    <section>
+      <h2  id="skill" class="myskill">My Skill</h2>
+        <img src="./skill/html.png" />
+        <img src="./skill/css.png" />
+        <img class="js" src="./skill/js.png" />
+        <img src="./skill/React.png" />
+        <img class="next" src="./skill/next.png" />
+        <img class="php" src="./skill/php.svg" />
+        <img class="laravel" src="./skill/laravel.png" />
+        <img src="./skill/python.png" />
+    </section>
+    <section id="project">
+      <h2>My Project</h2>
+      <div class="myprojects">
+        <div class="myproject jugglink ">
+          <a href="https://jugglink.herokuapp.com/" target="_blank" rel="noopener noreferrer">
+            <img src="./skill/jugglink.png" />
+          </a>
+          <p>ジャグリングする人向けの動画投稿サイト</p>
+          <p>技や道具、歴などでソートできます。</p>
+        </div>
+        <div class="myproject mikata ">
+          <a href="https://imposters-t-test1.herokuapp.com/" target="_blank" rel="noopener noreferrer">
+            <img src="./skill/mikata.png" />
+          </a>
+          <p>小学生の夏休みの課題をズルして終わらせるためのアプリ</p>
+          <p>ちょうどよく間違える電卓や翻訳機を搭載しています。</p>
+        </div>
+      </div>
+      <div class="myprojects">
+        <div class="myproject">
+          <div class="myproject mikata ">
+            <a href="#home">
+              <img src="./skill/portfolio.png" />
+            </a>
+            <p>ポートフォリオサイトvar1です</p>
+            <p>three.jsを用いて作成されています。</p>
+          </div>
+        </div>
+        <div class="myproject">
+          <p>comming soon ...</p>
+        </div>
+      </div>
+    </section>
+    <section id="conect">
+      <h2>Contact</h2>
+      <a href="https://twitter.com/YuugouOhno" target="_blank" rel="noopener noreferrer">
+        <img class="twitter" src="./skill/twitter.webp" />
+      </a>
+      <a href="https://github.com/YuugouOhno" target="_blank" rel="noopener noreferrer">
+        <img class="github" src="./skill/github.png" />
+      </a>
+      <br>
+      <a href="mailto:yuugou.50.ohno@gmail.com" target="_blank" rel="noopener noreferrer">
+        <img src="./skill/mail.svg" />
+      </a>
+      <a href="https://www.wantedly.com/id/yuugou_ohno_p" target="_blank" rel="noopener noreferrer">
+        <img class="wantedly" src="./skill/wantedly.png" />
+      </a>
+      
+    </section>
+
+  </main>
+  <script type="module" src="/main.js"></script>
+  <script>
+    var scrollElm = (function () {
+      if ('scrollingElement' in document) return document.scrollingElement;
+      if (navigator.userAgent.indexOf('WebKit') != -1) return document.body;
+      return document.documentElement;
+    })();
+    (function () {
+      var duration = 800;
+      var ignore = '.noscroll';
+      var easing = function (t, b, c, d) { return c * (0.5 - Math.cos(t / d * Math.PI) / 2) + b; }; //jswing
+      var smoothScrollElm = document.querySelectorAll('a[href^="#"]:not(' + ignore + ')');
+      Array.prototype.forEach.call(smoothScrollElm, function (elm) {
+        elm.addEventListener('click', function (e) {
+          e.preventDefault();
+          var targetElm = document.querySelector(elm.getAttribute('href'));
+          if (!targetElm) return;
+          var targetPos = targetElm.getBoundingClientRect().top;
+          var startTime = Date.now();
+          var scrollFrom = scrollElm.scrollTop;
+          (function loop() {
+            var currentTime = Date.now() - startTime;
+            if (currentTime < duration) {
+              scrollTo(0, easing(currentTime, scrollFrom, targetPos, duration));
+              window.requestAnimationFrame(loop);
+            } else {
+              scrollTo(0, targetPos + scrollFrom);
+            }
+          })();
+        })
+      });
+    })();
+  </script>
+</body>
+
+</html>
