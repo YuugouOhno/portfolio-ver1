@@ -54,7 +54,7 @@ const plane = [];
 for (let i = 0; i < length; i++) {
   let geometry = new THREE.PlaneGeometry(plane_scale, plane_scale02);
   var material = new THREE.MeshBasicMaterial({
-    color: '0xafafb0',
+    color: '0xffffff',
     opacity: 0.4,
     transparent: true,
     side: THREE.DoubleSide
@@ -74,7 +74,7 @@ function random(min, max) {
 
 // box
 const boxGeometry = new THREE.BoxGeometry(5, 5, 5, 10);
-const boxMaterial = new THREE.MeshNormalMaterial();
+const boxMaterial = new THREE.MeshNormalMaterial({color: '0xffffff'});
 const box = new THREE.Mesh(boxGeometry, boxMaterial);
 box.position.set(0, 0.5, -15);
 box.rotation.set(1, 1, 0);
@@ -135,7 +135,7 @@ for (let i = 0; i < 200; i++) {
 
 // torus
 const torusGeometry = new THREE.TorusGeometry(8, 1, 16, 100);
-const torusMaterial = new THREE.MeshNormalMaterial();
+const torusMaterial = new THREE.MeshNormalMaterial({color: '0xffffff'});
 const torus = new THREE.Mesh(torusGeometry, torusMaterial);
 torus.position.set(0, 1, 10);
 
