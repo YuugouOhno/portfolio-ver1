@@ -118,48 +118,62 @@ img {
   margin: 5% 0;
 }
 
-.myprojects {
-  display: flex;
-  justify-content: center;
-  justify-items: center;
-}
 
-.myproject {
-  float: left;
-  width: 45%;
-  min-height: 30vh;
-  min-width: 40vw;
-  background-color: white;
-  opacity: 0.9;
-  margin: 20px;
-  display: flex;
-  padding: 0 auto;
-  
+
+.projects {
+  display:flex;
   flex-direction: column;
-  color: black;
-  font-size: 16px;
-  justify-items: center;
-  border-radius: 10px;
 }
 
+.project {
+  display:flex;
+  width:80%;
+  margin:0 auto;
+  margin-top:80px;
+}
 
+.project-image {
+  width:45%;
+  display: flex;
+  align-items: center;
+}
 
-.myproject:hover{
+.project-image a{
+  margin:auto;
+  width:100%;
+  height:100%;
+  display: flex;
+  align-items: center;
+}
+.project-image img {
+  margin:auto;
+  width:90%;
+  border-radius: 15px;
+  opacity: 0.9;
+}
+
+.project-image img:hover {
   opacity: 1;
+  
 }
 
-.jugglink img {
-  width: 50%;
+.project-content {
+  width:55%;
+  background-color: white;
+  opacity: 0.8;
+  color:black;
+  border-radius: 15px;
 }
 
-.pyroject a {
-  margin-top: 5px;
-  padding-top: 5px;
+
+.project-content p {
+  font-size:1rem;
 }
 
-.mikata img {
-  width: 90%;
-  margin-top: 10px;
+.project-content span {
+  display:inline-block;
+  border:1px solid;
+  border-radius: 5px;
 }
 
 .anim-box.slidein.is-animated {
