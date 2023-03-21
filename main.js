@@ -268,9 +268,10 @@ function playScrollAnimation() {
 //ブラウザのスクロール率を取得
 let scrollPercent = 0;
 document.body.onscroll = () => {
-  scrollPercent = (document.documentElement.scrollTop /
-    (document.documentElement.scrollHeight -
-      document.documentElement.clientHeight)) * 100
+  // scrollPercent = (document.documentElement.scrollTop /
+  //   (document.documentElement.scrollHeight -
+  //     document.documentElement.clientHeight)) * 100
+  scrollPercent = 0
   console.log(scrollPercent);
 };
 
